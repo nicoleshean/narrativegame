@@ -1,3 +1,19 @@
+VAR dice = false
+VAR frisbee = false
+VAR ball = false
+VAR chalk = false
+VAR notepad = false
+VAR rope = false
+
+VAR wallet = 25
+VAR diceCost = 4
+VAR frisbeeCost = 5
+VAR ballCost = 3
+VAR chalkCost = 6
+VAR notepadCost = 3
+VAR ropeCost = 4
+
+
 -> Home.Intro
 
 === Map
@@ -248,9 +264,102 @@ Dean: Hah! That’s a long ways off for me. But maybe someday… anyways, what c
 
 = Shop
 
+You have {wallet} cents.
+{dice and frisbee and ball and chalk and notepad and rope: 
+    -> Empty
+
+-else:
+    -> Assist
+}
+
+=Inventory
+{dice: You have dice.}
+{frisbee: You have a frisbee.}
+{ball: You have a ball}
+{chalk: You have chalk.}
+{notepad: You have a notepad}
+{rope: You have rope.}
+
+*[dice - {diceCost}]
+{ diceCost <= wallet:
+    ~ wallet = wallet - diceCost
+    ~ dice = true
+    -> Bought
+- else:
+    -> Broke
+}
+
+*[frisbee - {frisbeeCost}]
+{ frisbeeCost <= wallet:
+    ~ wallet = wallet - frisbeeCost
+    ~ frisbee = true
+    -> Bought
+- else: 
+    -> Broke
+}
+
+*[ball - {ballCost}]
+{ ballCost <= wallet:
+    ~ wallet = wallet - ballCost
+    ~ ball = true
+    -> Bought
+- else: 
+    -> Broke
+}
+
+*[chalk - {chalkCost}]
+{ chalkCost <= wallet:
+    ~ wallet = wallet - chalkCost
+    ~ chalk = true
+    -> Bought
+- else: 
+    -> Broke
+}
+
+*[notepad - {notepadCost}]
+{ notepadCost <= wallet:
+    ~ wallet = wallet - notepadCost
+    ~ notepad = true
+    -> Bought
+- else: 
+    -> Broke
+}
+
+*[rope - {ropeCost}]
+{ ropeCost <= wallet:
+    ~ wallet = wallet - ropeCost
+    ~ rope = true
+    -> Bought
+- else: 
+    -> Broke
+}
 
 + [Leave]
 -> KimmysHouse.Day1
+
+=Assist
+What would you like to buy?
+-> Inventory
+
+=Empty
+The shop is empty!
+-> Inventory
+
+=Bought
+You bought it!
+
++ [Keep Shopping]
+-> Shop
+
++ [Leave]
+-> KimmysHouse.Day1
+
+=Broke
+You don't have enough money.
++ [Keep Shopping]
+-> Shop
+
+-> Shop
 
 === Donna
 
