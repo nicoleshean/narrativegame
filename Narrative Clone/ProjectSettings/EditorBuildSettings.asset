@@ -17,4 +17,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Plugins/Ink/Day1/Day1.unity
     guid: 706c8786840be42b296e283c823f33a3
+  - enabled: 1
+    path: Assets/Plugins/Ink/Day1/ScenePreviews.unity
+    guid: 969fae20610a24505aa558e3e91e3707
   m_configObjects: {}
