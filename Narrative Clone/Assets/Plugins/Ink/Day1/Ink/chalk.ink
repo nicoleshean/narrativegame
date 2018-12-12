@@ -14,6 +14,8 @@ VAR c4Ctxt = "You win if you pick up the most snacks. "
 
 === ExplainChalk
 
+#but: game
+
 +[{c1Atxt}] 
 ~ chalkText = chalkText+ c1Atxt
 +[{c1Btxt}]

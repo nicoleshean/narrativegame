@@ -14,6 +14,8 @@ VAR n4Ctxt = "You win if you get three of your symbols in a row. "
 
 === ExplainNotepad
 
+#but: game
+
 +[{n1Atxt}] 
 ~ notepadText = notepadText+ n1Atxt
 +[{n1Btxt}]

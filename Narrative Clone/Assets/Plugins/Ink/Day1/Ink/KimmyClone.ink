@@ -28,7 +28,9 @@ VAR ropeCost = 4
 
 === Map
 
-You open your map. Where would you like to go?
+You open your map. #loc: clear #but: map 
+
+Where would you like to go? 
 
 + {KimmysHouse.Day1Intro} [Downtown]
 -> Downtown
@@ -40,18 +42,26 @@ You open your map. Where would you like to go?
 -> KimmysHouse
 
 === Downtown
-#downtown
-Downtown: Some kids stand along the sidewalk. Not much to do here right now.
+#loc: downtown #but: bottom
+Downtown
+
+The streets are empty and the shops are closed. Not much to do here right now. 
 
 + [Leave]
+
+#loc: clear
 
 -> Map
 
 === Playground
-#playground
-Playground: It's a playground. Not much to do here right now.
+#loc: playground #but: bottom
+The Playground
+
+It's a playground. Not much to do here right now. 
 
 + [Leave]
+
+#loc: clear
 
 -> Map
 
@@ -62,15 +72,22 @@ Playground: It's a playground. Not much to do here right now.
 +{not Intro} -> Intro
 
 = Day1
-Dana's House: Dana's mom is standing in front of the house. Not much to do here right now.
+#loc: danaHouse #but: bottom
+Dana's House
+
+Dana's mom is busy doing other things. Not much to do here right now. 
 
 +[Leave]
+
+#loc: clear
 -
 ->Map
 
 = Intro
+#loc: danaHouse #but: bottom
+Dana's House
 
-Dana's House: Late 1960s, Massachusetts.
+Late 1960s, Massachusetts. 
 
 Dana's mom is standing on the porch.
 
@@ -78,9 +95,11 @@ Dana's mom is standing on the porch.
 -> Mom1
 
 = Mom1
-#dana #danaMom #kimmy
 
-Dana: Mom! Look! God sent me a baby!
+#convo: d/k/dm #but: bottom
+Dana approaches her mother with a young girl by her side.
+
+Dana: Mom! Look! God sent me a baby! 
 
 Mom: ...Excuse me?
 
@@ -108,30 +127,36 @@ Dana: Well maybe God didn’t send her, but she came out of nowhere! Kimmy, you 
 
 Kimmy: Ferry Street... I untied myself from the porch so I could go for a walk…
 
-
-
 Mom: It’s ok dear, let’s go to your house Kimmy… you said it’s on Ferry Street? Your parents are probably worried.
 
 + [Leave]
+
+#loc: clear #convo: clear
 
 -> Map
 
 
 === KimmysHouse
-+{Day1Intro} -> Day1
-+{not Day1Intro} -> Day1Intro
+
 +{not Intro} -> Intro
++{Day1Intro} -> Day1
++{Intro + not Day1Intro} -> Day1Intro
 
 = Intro
+#loc: kimmyHouse #but: bottom
+Kimmy's House
 
-Kimmy's house sits next to the Ferry Corner Store, which is currently closed.
+Kimmy's house sits next to the Ferry Corner Store, which is currently closed. 
 
 Kimmy's Mother is standing patiently on her porch.
 
 *[Approach Kimmy's Mother]
 
 -
-Dana: I’m sorry… I thought God sent me a baby and I got so excited…
+#convo: d/k/dm/km
+Dana, Kimmy, and Dana's mother walk up to Kimmy's mother.
+
+Dana: I’m sorry… I thought God sent me a baby and I got so excited… 
 
 Kimmy's Mom: Oh, don’t worry. Thank you for finding Kimmy and walking her home. What's your name, dear?
 
@@ -161,23 +186,30 @@ Dana: Ok. Bye bye Kimmy, and Mrs...?
 
 Kimmy's Mom: Mrs. Munro. Again, thank you for giving Kimmy a hand. It was nice meeting you, Mrs. Navarro.
 
-Mom: Likewise.
+Mom: Likewise. 
 
-Kimmy: Bye bye.
+Kimmy: Bye bye. 
+
+
 
 +[Leave]
 
+Dana and her mother head home for the night. #loc: clear #convo: clear #but: bottom
+
 -> Day1Intro
 
-=Day1Intro
-#dana #kimmy
+=Day1Intro 
+#loc: kimmyHouse
+Kimmy's House
 
-Kimmy's House: The next morning, you find Kimmy at her house for your first day of babysitting.
+The next morning, Dana finds Kimmy at her house for her first day of babysitting. 
 
 *[Greet Kimmy]
 
 -
-Dana: Mornin’ Kimmy! I’m here to babysit, like I promised! Is your mom around?
+Dana walks up to Kimmy. #convo: d/k
+
+Dana: Mornin’ Kimmy! I’m here to babysit, like I promised! Is your mom around? 
 
 Kimmy: My mommy’s not inside. She left already.
 
@@ -209,21 +241,26 @@ Kimmy: ...!
 
 +[Leave]
 
+#loc: clear #convo: clear
+
 -> Map
 
 = Day1
-You are at *Kimmy's House*
+#loc: kimmyHouse #but: bottom
+Kimmy's House
 
-Kimmy's House: The Ferry Corner Store is open. Dean stands at the counter, waiting to help the next customer. 
+The Ferry Corner Store is open. Dean stands at the counter, waiting to help the next customer. 
 
-Donna stands on the sidewalk. She is wearing mouse ears.
+Donna stands on the sidewalk. She is wearing mouse ears. 
 
-+[Approach the Store]
--> Dean
+What would you like to do? 
 +[Talk to Donna]
 -> Donna
 +[Open your Map]
 -> Map
++[Approach the Store] 
+Dana and Kimmy walk up to Dean at the shop. #loc: clear #but: bottom
+-> Dean
 
 === Dean
 
@@ -231,10 +268,9 @@ Donna stands on the sidewalk. She is wearing mouse ears.
 +{not Intro} -> Intro
 
 =Intro
-#dean #dana #kimmy
-Kimmy's House: 
+Dean waves as Dana and Kimmy approach. #loc: kimmyHouse #convo: d/k/de 
 
-Dean: Hey, Kid.
+Dean: Hey, Kid. 
 
 Dana: Hi, Dean. This is Kimmy. I’m babysitting her now.
 
@@ -260,15 +296,15 @@ Dean: They do, Kimmy, they do. I make sweaters, dresses, hats--you name it.
 
 Dana: You should sell your clothes at Jordan Marsh! That’s where I always find the nicest clothes.
 
-Dean: Hah! That’s a long ways off for me. But maybe someday… anyways, what can I get for ya?
+Dean: Hah! That’s a long ways off for me. But maybe someday… anyways, what can I get for ya? 
++ [Browse shop] #loc: clear #convo: clear
 
-+ [Browse shop]
 -> Shop
 
 = Shop
-#shop
+Welcome to the shop! #loc: shop #but: shop
 
-Shop: You have {wallet} cents.
+You have {wallet} cents. 
 {dice and frisbee and ball and chalk and notepad and rope: 
     -> Empty
 
@@ -277,6 +313,7 @@ Shop: You have {wallet} cents.
 }
 
 =Inventory
+
 {dice: You have dice.}
 {frisbee: You have a frisbee.}
 {ball: You have a ball}
@@ -289,6 +326,7 @@ Shop: You have {wallet} cents.
     ~ wallet = wallet - diceCost
     ~ dice = true
     ~ inventory = inventory + 1
+    #bought: dice
     -> Bought
 - else:
     -> Broke
@@ -299,6 +337,7 @@ Shop: You have {wallet} cents.
     ~ wallet = wallet - frisbeeCost
     ~ frisbee = true
     ~ inventory = inventory + 1
+    #bought: frisbee
     -> Bought
 - else: 
     -> Broke
@@ -309,6 +348,7 @@ Shop: You have {wallet} cents.
     ~ wallet = wallet - ballCost
     ~ ball = true
     ~ inventory = inventory + 1
+    #bought: ball
     -> Bought
 - else: 
     -> Broke
@@ -319,6 +359,7 @@ Shop: You have {wallet} cents.
     ~ wallet = wallet - chalkCost
     ~ chalk = true
     ~ inventory = inventory + 1
+    #bought: chalk
     -> Bought
 - else: 
     -> Broke
@@ -329,6 +370,7 @@ Shop: You have {wallet} cents.
     ~ wallet = wallet - notepadCost
     ~ notepad = true
     ~ inventory = inventory + 1
+    #bought: notepad
     -> Bought
 - else: 
     -> Broke
@@ -339,6 +381,7 @@ Shop: You have {wallet} cents.
     ~ wallet = wallet - ropeCost
     ~ rope = true
     ~ inventory = inventory + 1
+    #bought: rope
     -> Bought
 - else: 
     -> Broke
@@ -346,22 +389,26 @@ Shop: You have {wallet} cents.
 
 + [Leave]
 
+Dana and Kimmy turn to leave the shop. #loc: clear
+
 -
 + {DeanOutro} -> KimmysHouse.Day1
 + {not DeanOutro} -> DeanOutro
 
 =DeanOutro
-#dean #dana #kimmy
+#loc: kimmyHouse #convo: d/k/de #but: bottom
 
-Kimmy's House:
+Dana turns back and waves goodbye.
 
-Dana: Thanks, Dean!
+Dana: Thanks, Dean! 
 
 Kimmy: Thank you Mr. Dean!
 
 Dean: Bye bye girls. Have fun.
 
 +[...]
+
+#loc: clear #convo: clear 
 
 -> KimmysHouse.Day1
 
@@ -374,15 +421,21 @@ The shop is empty!
 -> Inventory
 
 =Bought
-You bought it!
+
+You bought it! #but: bottom
+
+What would you like to do next?
 
 + [Keep Shopping]
+#but: shop
 -> Shop
 
 + [Leave]
+#loc: clear
 -> KimmysHouse.Day1
 
 =Broke
+#but: bottom
 You don't have enough money.
 + [Keep Shopping]
 -> Shop
@@ -394,9 +447,11 @@ You don't have enough money.
 -> Intro
 
 =Intro
-#dana #kimmy #donna
+#loc: kimmyHouse #convo: d/k/do #but: bottom
 
-Kimmy: Hi Donna.
+Dana and Kimmy walk up to Donna.
+
+Kimmy: Hi Donna. 
 
 Donna: What happened, Kimmy? Did you untie yourself from the porch again?
 
@@ -420,51 +475,59 @@ Donna: Well, I’m trying to avoid Harold so it’s probably good to look busy. 
 
 Kimmy: I like your ears.
 
-Donna: Oh, thanks. They’re new. Anyways, I wanna play a new game.
+Donna: Oh, thanks. They’re new. Anyways, I wanna play a new game.  
 
-+[...]
++[...] #convo: clear
 
 -> PickGame
 
 =PickGame
+Dana reaches into her pockets. #convo: inventory #but: inventory 
 
-What would you like to play with?
+What would you like to play with? 
 
-+ {dice} [Dice] Ok, let's try Yahtzee then.
++ {dice} [Dice] Ok, let's try Yahtzee then. #convo: game
     ++ [...] Ok, I'll teach you how to play Yahtzee. 
     -> ExplainDice
-+ {frisbee} [Frisbee] Ok, let's try catch then.
++ {frisbee} [Frisbee] Ok, let's try catch then. #convo: game
     ++ [...] Ok, I'll teach you how to play catch. 
     -> ExplainFrisbee
-+ {ball} [Ball] Ok, let's try jacks then.
++ {ball} [Ball] Ok, let's try jacks then. #convo: game
     ++ [...] Ok, I'll teach you how to play jacks. 
     -> ExplainBall
-+ {chalk} [Chalk] Ok, let's try hopscotch then.
++ {chalk} [Chalk] Ok, let's try hopscotch then. #convo: game 
     ++ [...] Ok, I'll teach you how to play hopscotch. 
     -> ExplainChalk
-+ {notepad} [Notepad] Ok, let's try tic-tac-toe then.
++ {notepad} [Notepad] Ok, let's try tic-tac-toe then. #convo: game
     ++ [...] Ok, I'll teach you how to play tic-tac-toe. 
     -> ExplainNotepad
-+ {rope} [Rope] Ok, let's try tug-of-war then.
++ {rope} [Rope] Ok, let's try tug-of-war then. #convo: game
     ++ [...] Ok, I'll teach you how to play tug-of-war. 
     -> ExplainRope
 + {inventory == 0} [You have nothing to play with!]
     -> NoGames
 
 = NoGames
-#dana #kimmy #donna
 
-Dana: Oh no! I’m sorry… I thought I had some stuff to play games with in my bag… but it looks like I ran out.
+Dana checks her pockets, only to find they're empty.
+
+Dana: Oh no! I’m sorry… I thought I had some stuff to play games with in my bag… but it looks like I ran out. 
 Kimmy: Oh no...
 Dana: It’s ok! Kimmy, let’s run to the store and buy some game pieces! We’ll be right back!
 
 + [Leave]
 
+#convo: clear
+
 -> KimmysHouse.Day1
 
 = TaughtGame
-#dana #kimmy #donna
-Donna: I’m surprised, normally you’re so quiet Kimmy.
+
+#convo: d/k/do #but: bottom
+
+Kimmy smiles widely.
+
+Donna: I’m surprised, normally you’re so quiet Kimmy. 
 
 Kimmy: Mom said it’s ok to be quiet.
 
@@ -495,9 +558,10 @@ Dana: …I’m not going to answer that, Donna. Who I like is none of your busin
 -> FriendSuccess
 
 = FriendSuccess
-#dana #kimmy #donna
 
-Donna: ...Are you gonna walk to Jordan Marsh? That’s where my babysitter used to take me.
+Donna pauses to think, tapping her foot.
+
+Donna: ...Are you gonna walk to Jordan Marsh? That’s where my babysitter used to take me. 
 
 Dana: Maybe! Kimmy doesn't seem to know too many people around town though, so I think we should save big trips for later.
 
@@ -532,6 +596,8 @@ Donna: Kimmy, you would look nice in a ribbon. Cat ears too probably.
 Kimmy: …Maybe.
 
 + [Leave]
+
+#loc: clear #convo: clear
 # CLASS: end
 -
 To be continued...

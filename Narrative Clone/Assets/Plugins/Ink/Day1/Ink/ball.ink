@@ -14,6 +14,8 @@ VAR b4Ctxt = "You win if you knock the most Jacks out of line using your egg. "
 
 === ExplainBall
 
+#but: game
+
 +[{b1Atxt}] 
 ~ ballText = ballText+ b1Atxt
 +[{b1Btxt}]

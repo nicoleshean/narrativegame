@@ -1,0 +1,23 @@
+fileFormatVersion: 2
+guid: a0a42213ff6ab41bab5e05fc8a13c807
+TrueTypeFontImporter:
+  externalObjects: {}
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontName: Folks
+  fontNames:
+  - Folks
+  fallbackFontReferences:
+  - {fileID: 12800000, guid: 15a150c28cdb64290a42c261908a5d4e, type: 3}
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  useLegacyBoundsCalculation: 0
+  shouldRoundAdvanceValue: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

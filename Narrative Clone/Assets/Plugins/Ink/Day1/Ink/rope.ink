@@ -14,6 +14,8 @@ VAR r4Ctxt = "You win if you can pull the other friend to the top of the stairs 
 
 === ExplainRope
 
+#but: game
+
 +[{r1Atxt}] 
 ~ ropeText = ropeText+ r1Atxt
 +[{r1Btxt}]

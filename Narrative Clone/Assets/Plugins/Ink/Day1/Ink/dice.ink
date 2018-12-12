@@ -14,6 +14,8 @@ VAR d4Ctxt = "You win if you caught the most dice! "
 
 === ExplainDice
 
+#but: game
+
 +[{d1Atxt}] 
 ~ diceText = diceText+ d1Atxt
 +[{d1Btxt}]

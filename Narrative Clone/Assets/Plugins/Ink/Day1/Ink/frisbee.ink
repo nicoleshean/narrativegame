@@ -14,6 +14,8 @@ VAR f4Ctxt = "You win if you eat the most candies. "
 
 === ExplainFrisbee
 
+#but: game
+
 +[{f1Atxt}] 
 ~ frisbeeText = frisbeeText+ f1Atxt
 +[{f1Btxt}]

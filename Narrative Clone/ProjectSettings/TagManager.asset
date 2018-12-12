@@ -3,7 +3,13 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - Dice
+  - Frisbee
+  - Ball
+  - Chalk
+  - Notepad
+  - Rope
   layers:
   - Default
   - TransparentFX
